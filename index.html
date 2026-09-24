@@ -3,1090 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vikash Pathak — Finance & Accounts Professional</title>
+<title>Vikash Pathak — Senior Accounts Executive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --ink:       #111418;
-    --ink2:      #2A3140;
-    --muted:     #6B7585;
-    --rule:      #E4E7ED;
-    --surface:   #F6F7F9;
-    --white:     #FFFFFF;
-    --gold:      #B8872A;
-    --gold-lt:   #FBF4E8;
-    --gold-dk:   #8A6018;
-    --teal:      #0C6E6A;
-    --teal-lt:   #E0F2F1;
-    --navy:      #162540;
+    --ink: #1c2430;
+    --muted: #5d6673;
+    --rule: #dfe3e8;
+    --accent: #0f4c5c;
+    --tint: #eef3f4;
+    --paper: #ffffff;
+    --bg: #f2f3f5;
   }
-
-  html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
     color: var(--ink);
-    font-size: 15px;
-    line-height: 1.65;
+    background: var(--bg);
     -webkit-font-smoothing: antialiased;
   }
+  .page {
+    max-width: 920px;
+    margin: 32px auto;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+  }
 
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.94);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--rule);
+  header {
+    padding: 44px 48px 28px;
+    border-bottom: 3px solid var(--accent);
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 48px;
-    height: 60px;
-  }
-  .nav-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: 0.5px;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 32px; }
-  .nav-links a {
-    font-size: 13px;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color .2s;
-    letter-spacing: 0.3px;
-  }
-  .nav-links a:hover { color: var(--ink); }
-  .nav-cta {
-    font-size: 13px;
-    font-weight: 500;
-    background: var(--ink);
-    color: var(--white);
-    padding: 8px 18px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: background .2s;
-    letter-spacing: 0.3px;
-  }
-  .nav-cta:hover { background: var(--gold-dk); }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: var(--navy);
-    padding: 80px 48px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,135,42,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  /* decorative lines */
-  .hero-lines {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 42%;
-    pointer-events: none;
-    overflow: hidden;
-  }
-  .hero-lines svg { width: 100%; height: 100%; }
-
-  .hero-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 1160px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 80px;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--gold);
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(40px, 5vw, 64px);
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 24px;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
-  .hero-sub {
-    font-size: 16px;
-    color: rgba(255,255,255,0.6);
-    max-width: 520px;
-    margin-bottom: 36px;
-    line-height: 1.75;
-  }
-  .hero-tags {
-    display: flex;
+    align-items: flex-end;
+    gap: 32px;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 40px;
   }
-  .hero-tag {
-    font-size: 12px;
-    padding: 5px 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 20px;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.3px;
-  }
-  .hero-actions { display: flex; gap: 14px; align-items: center; }
-  .btn-hero-primary {
-    background: var(--gold);
-    color: var(--white);
-    font-size: 14px;
-    font-weight: 500;
-    padding: 13px 26px;
-    border-radius: 6px;
-    text-decoration: none;
-    letter-spacing: 0.3px;
-    transition: background .2s;
-  }
-  .btn-hero-primary:hover { background: var(--gold-dk); }
-  .btn-hero-secondary {
-    font-size: 14px;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    letter-spacing: 0.3px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color .2s;
-  }
-  .btn-hero-secondary:hover { color: var(--white); }
-
-  /* hero card */
-  .hero-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 32px;
-    backdrop-filter: blur(8px);
-  }
-  .hero-card-avatar {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dk) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    color: var(--white);
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 42px;
+    line-height: 1.05;
     font-weight: 700;
-    margin-bottom: 18px;
-    border: 3px solid rgba(255,255,255,0.15);
-  }
-  .hero-card h3 {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .hero-card .role {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 24px;
-    font-family: 'DM Mono', monospace;
-  }
-  .hero-card-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .hc-stat { }
-  .hc-stat .num {
-    font-family: 'DM Mono', monospace;
-    font-size: 24px;
-    font-weight: 500;
-    color: var(--gold);
-  }
-  .hc-stat .lbl {
-    font-size: 11px;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.3px;
-    margin-top: 2px;
-  }
-  .hero-card-badges { display: flex; flex-wrap: wrap; gap: 6px; }
-  .hc-badge {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    background: rgba(184,135,42,0.18);
-    color: var(--gold);
-    border: 1px solid rgba(184,135,42,0.3);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* ── SECTIONS COMMON ── */
-  section { padding: 88px 48px; }
-  .container { max-width: 1160px; margin: 0 auto; }
-  .eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
-  .sec-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.15;
-    margin-bottom: 14px;
     letter-spacing: -0.5px;
   }
-  .sec-sub {
-    font-size: 15px;
-    color: var(--muted);
-    max-width: 540px;
-    line-height: 1.7;
-    margin-bottom: 52px;
-  }
+  .headline { color: var(--accent); font-weight: 500; font-size: 15px; margin-top: 8px; }
+  .contact { font-size: 13px; color: var(--muted); line-height: 1.9; text-align: right; }
+  .contact a { color: var(--ink); text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
 
-  /* ── ABOUT ── */
-  #about { background: var(--surface); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 72px;
-    align-items: start;
-  }
-  .about-body { font-size: 15px; color: var(--ink2); line-height: 1.8; }
-  .about-body p { margin-bottom: 18px; }
-  .about-body strong { color: var(--ink); }
-  .about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 32px;
-  }
-  .about-hi {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 10px;
-    padding: 18px;
-  }
-  .about-hi .ico { font-size: 20px; margin-bottom: 8px; }
-  .about-hi .lab { font-size: 12px; color: var(--muted); margin-bottom: 4px; font-family: 'DM Mono', monospace; }
-  .about-hi .val { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .body { display: grid; grid-template-columns: 1fr 268px; }
+  main { padding: 32px 40px 40px 48px; }
+  aside { padding: 32px 40px 40px 32px; background: var(--tint); }
 
-  .about-aside { }
-  .exp-card {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 12px;
-    padding: 22px 24px;
-    margin-bottom: 16px;
-    position: relative;
-    border-left: 3px solid var(--gold);
+  h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--accent);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
   }
-  .exp-card .ec-co { font-size: 12px; color: var(--muted); margin-bottom: 4px; font-family: 'DM Mono', monospace; }
-  .exp-card .ec-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-  .exp-card .ec-period {
-    font-size: 11px;
-    background: var(--gold-lt);
-    color: var(--gold-dk);
-    padding: 2px 8px;
-    border-radius: 10px;
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-  }
-  .exp-card .ec-desc { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+  section + section { margin-top: 30px; }
+  aside h2 { border-bottom-color: #cbd6d9; }
 
-  /* ── SERVICES ── */
-  #services { background: var(--white); }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .svc-card {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    padding: 28px;
-    transition: box-shadow .25s, border-color .25s, transform .25s;
-    cursor: default;
-  }
-  .svc-card:hover {
-    box-shadow: 0 12px 40px rgba(0,0,0,.08);
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
-  .svc-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--gold-lt);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-bottom: 18px;
-  }
-  .svc-name { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
-  .svc-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
-  .svc-price {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--gold-dk);
-    background: var(--gold-lt);
-    padding: 4px 10px;
-    border-radius: 4px;
-    display: inline-block;
-  }
+  .summary { color: #2f3947; }
 
-  /* ── SKILLS ── */
-  #skills { background: var(--navy); }
-  #skills .sec-title { color: var(--white); }
-  #skills .sec-sub { color: rgba(255,255,255,0.5); }
-  #skills .eyebrow::before { background: var(--gold); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
-  .skill-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 16px 18px;
-  }
-  .skill-name { font-size: 13px; color: rgba(255,255,255,0.8); min-width: 160px; }
-  .skill-bar-wrap {
-    flex: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .skill-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--gold-dk), var(--gold));
-    border-radius: 2px;
-    transition: width 1.2s ease;
-  }
-  .skill-pct {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--gold);
-    min-width: 36px;
-    text-align: right;
-  }
+  .job { margin-bottom: 24px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .job-title { font-weight: 600; font-size: 15px; }
+  .job-date { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+  .job-co { color: var(--accent); font-size: 13.5px; margin-bottom: 6px; }
+  .job ul { padding-left: 18px; }
+  .job li { margin-bottom: 4px; }
+  .job li::marker { color: var(--accent); }
 
-  .tools-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 40px;
-  }
-  .tool-tag {
-    font-size: 12px;
-    padding: 6px 14px;
-    border: 1px solid rgba(184,135,42,0.35);
-    border-radius: 20px;
-    color: rgba(255,255,255,0.65);
-    font-family: 'DM Mono', monospace;
-  }
+  .side-block { margin-bottom: 4px; }
+  .side-list { list-style: none; }
+  .side-list li { padding: 3px 0; font-size: 13px; }
+  .edu-item { margin-bottom: 12px; font-size: 13px; }
+  .edu-item strong { display: block; font-weight: 600; }
+  .edu-item span { color: var(--muted); }
 
-  /* ── PORTFOLIO ── */
-  #portfolio { background: var(--surface); }
-  .port-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .port-card {
-    background: var(--white);
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    overflow: hidden;
-    transition: box-shadow .25s, transform .25s;
-  }
-  .port-card:hover {
-    box-shadow: 0 16px 48px rgba(0,0,0,.09);
-    transform: translateY(-4px);
-  }
-  .port-card-top {
-    height: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 42px;
-    position: relative;
-    overflow: hidden;
-  }
-  .port-card-top.c1 { background: linear-gradient(135deg, #162540, #1e3a5f); }
-  .port-card-top.c2 { background: linear-gradient(135deg, #0c2b2a, #0d4b48); }
-  .port-card-top.c3 { background: linear-gradient(135deg, #2b1f00, #5a3e00); }
-  .port-card-body { padding: 22px; }
-  .port-tag {
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--gold-dk);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-  .port-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
-  .port-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
-  .port-result {
-    font-size: 12px;
-    background: var(--teal-lt);
-    color: var(--teal);
-    padding: 4px 10px;
-    border-radius: 4px;
-    display: inline-block;
-  }
+  footer { padding: 14px 48px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); }
 
-  /* ── FREELANCE ── */
-  #freelance { background: var(--white); }
-  .fl-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
+  @media (max-width: 760px) {
+    .page { margin: 0; border: 0; }
+    header { padding: 32px 24px 22px; }
+    .contact { text-align: left; }
+    .body { grid-template-columns: 1fr; }
+    main { padding: 26px 24px; }
+    aside { padding: 26px 24px; }
+    footer { padding: 14px 24px; }
+    h1 { font-size: 34px; }
   }
-  .fl-card {
-    border: 1px solid var(--rule);
-    border-radius: 14px;
-    padding: 28px;
-    background: var(--surface);
-  }
-  .fl-card .fl-no {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--gold);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  .fl-card .fl-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
-  .fl-card .fl-earn { font-size: 13px; color: var(--teal); font-weight: 500; margin-bottom: 10px; }
-  .fl-card .fl-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
-
-  /* ── CONTACT ── */
-  #contact { background: var(--navy); }
-  #contact .sec-title { color: var(--white); }
-  #contact .sec-sub { color: rgba(255,255,255,0.5); }
-  #contact .eyebrow::before { background: var(--gold); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-  .contact-items { display: flex; flex-direction: column; gap: 16px; }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
-    padding: 16px 20px;
-  }
-  .ci-ico {
-    width: 40px;
-    height: 40px;
-    background: rgba(184,135,42,0.15);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .ci-label { font-size: 11px; color: rgba(255,255,255,0.4); font-family: 'DM Mono', monospace; margin-bottom: 3px; }
-  .ci-value { font-size: 14px; color: rgba(255,255,255,0.85); }
-  .ci-value a { color: var(--gold); text-decoration: none; }
-  .ci-value a:hover { text-decoration: underline; }
-
-  .contact-form { }
-  .cf-row { margin-bottom: 16px; }
-  .cf-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 6px; display: block; font-family: 'DM Mono', monospace; letter-spacing: 0.5px; }
-  .cf-input, .cf-textarea {
-    width: 100%;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 14px;
-    color: rgba(255,255,255,0.85);
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
-    transition: border-color .2s;
-  }
-  .cf-input:focus, .cf-textarea:focus { border-color: rgba(184,135,42,0.5); }
-  .cf-textarea { height: 110px; resize: vertical; }
-  .cf-btn {
-    width: 100%;
-    background: var(--gold);
-    color: var(--white);
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: background .2s;
-    letter-spacing: 0.3px;
-    margin-top: 4px;
-  }
-  .cf-btn:hover { background: var(--gold-dk); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    padding: 28px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  footer .fl {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-  }
-  footer .fr {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-  }
-  .footer-links { display: flex; gap: 20px; }
-  .footer-links a {
-    font-size: 12px;
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-  }
-  .footer-links a:hover { color: var(--gold); }
-
-  /* ── DIVIDER ── */
-  .gold-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 40px; }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    section { padding: 60px 24px; }
-    .hero { padding: 80px 24px 48px; }
-    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-    .hero-card { display: none; }
-    .about-grid { grid-template-columns: 1fr; }
-    .services-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .port-grid { grid-template-columns: 1fr; }
-    .fl-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
+  @media print {
+    body { background: #fff; font-size: 12.5px; }
+    .page { margin: 0; border: 0; max-width: none; }
+    aside { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .job { break-inside: avoid; }
   }
 </style>
 </head>
 <body>
+<div class="page">
 
-<!-- ── NAV ── -->
-<nav>
-  <div class="nav-logo">VP<span>.</span>finance</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#skills">Skills</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#freelance">Freelance</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <a href="#contact" class="nav-cta">Hire Me</a>
-</nav>
-
-<!-- ── HERO ── -->
-<section class="hero" id="home">
-  <div class="hero-lines">
-    <svg viewBox="0 0 400 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="50" y1="0" x2="50" y2="700" stroke="rgba(184,135,42,0.08)" stroke-width="1"/>
-      <line x1="120" y1="0" x2="120" y2="700" stroke="rgba(184,135,42,0.05)" stroke-width="1"/>
-      <line x1="200" y1="0" x2="200" y2="700" stroke="rgba(184,135,42,0.07)" stroke-width="1"/>
-      <line x1="290" y1="0" x2="290" y2="700" stroke="rgba(184,135,42,0.04)" stroke-width="1"/>
-      <line x1="360" y1="0" x2="360" y2="700" stroke="rgba(184,135,42,0.06)" stroke-width="1"/>
-      <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(184,135,42,0.05)" stroke-width="1"/>
-      <line x1="0" y1="280" x2="400" y2="280" stroke="rgba(184,135,42,0.04)" stroke-width="1"/>
-      <line x1="0" y1="450" x2="400" y2="450" stroke="rgba(184,135,42,0.06)" stroke-width="1"/>
-      <line x1="0" y1="580" x2="400" y2="580" stroke="rgba(184,135,42,0.04)" stroke-width="1"/>
-      <!-- small chart line -->
-      <polyline points="20,420 60,380 110,360 170,300 230,290 290,240 350,200 390,180"
-        fill="none" stroke="rgba(184,135,42,0.25)" stroke-width="1.5" stroke-dasharray="4,3"/>
-      <circle cx="390" cy="180" r="4" fill="rgba(184,135,42,0.5)"/>
-    </svg>
-  </div>
-
-  <div class="hero-inner">
+  <header>
     <div>
-      <div class="hero-eyebrow">Finance & Accounts Professional</div>
-      <h1>Vikash<br><em>Pathak</em></h1>
-      <p class="hero-sub">6+ years turning complex financial operations into clean, compliant, and insightful outcomes — from GST filings and bank reconciliations to MIS dashboards and process improvements.</p>
-      <div class="hero-tags">
-        <span class="hero-tag">Record to Report (R2R)</span>
-        <span class="hero-tag">GST Compliance</span>
-        <span class="hero-tag">Bank Reconciliation</span>
-        <span class="hero-tag">Accounts Payable</span>
-        <span class="hero-tag">MIS Reporting</span>
-        <span class="hero-tag">Tally Prime</span>
-        <span class="hero-tag">Advanced Excel</span>
-      </div>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-hero-primary">Work with me</a>
-        <a href="#services" class="btn-hero-secondary">View services →</a>
-      </div>
+      <h1>Vikash Pathak</h1>
+      <div class="headline">Senior Accounts Executive · Record to Report · GST &amp; Reconciliation</div>
     </div>
+    <div class="contact">
+      Bengaluru, Karnataka, India<br>
+      <a href="tel:+918539979271">+91 85399 79271</a><br>
+      <a href="mailto:email.vikashpathak@gmail.com">email.vikashpathak@gmail.com</a><br>
+      <!-- REPLACE the three href values below with your real profile URLs before uploading -->
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://profile.indeed.com/p/YOUR-INDEED-PROFILE" target="_blank" rel="noopener">Indeed</a> ·
+      <a href="https://www.naukri.com/mnjuser/profile" target="_blank" rel="noopener">Naukri</a>
+    </div>
+  </header>
 
-    <div class="hero-card">
-      <div class="hero-card-avatar">VP</div>
-      <h3>Vikash Pathak</h3>
-      <div class="role">Sr. Accounts Executive · Bengaluru</div>
-      <div class="hero-card-stats">
-        <div class="hc-stat">
-          <div class="num">6+</div>
-          <div class="lbl">Years experience</div>
+  <div class="body">
+    <main>
+      <section>
+        <h2>Professional summary</h2>
+        <p class="summary">Finance and accounts professional with 6+ years of experience in Record to Report (R2R), accounts payable, bank and payment gateway reconciliation, GST compliance, TDS and MIS reporting. Currently handles multi-gateway reconciliations across TPSL, PayU, CCAvenue, HDFC and ICICI, supports month-end close, and builds Excel-based tracking that cuts manual effort. Known for accuracy at high transaction volumes and on-time compliance.</p>
+      </section>
+
+      <section>
+        <h2>Work experience</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Senior Accounts Executive</div>
+            <div class="job-date">Jan 2020 – Present</div>
+          </div>
+          <div class="job-co">Ebix Travels Pvt. Ltd. (Via.com), Bengaluru</div>
+          <ul>
+            <li>Manage daily reconciliation across five payment gateways and banks (TPSL, PayU, CCAvenue, HDFC, ICICI), with no unresolved mismatches for 12+ months.</li>
+            <li>Process airline backend refunds and support month-end closing under the R2R cycle.</li>
+            <li>Handle accounts payable, audit support and TDS working.</li>
+            <li>Built Excel-based daily bank debit summaries and monthly MIS reports used by leadership, reducing manual reporting time by 60%.</li>
+          </ul>
         </div>
-        <div class="hc-stat">
-          <div class="num">₹0</div>
-          <div class="lbl">GST penalties filed</div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Operations Manager</div>
+            <div class="job-date">Aug 2018 – Jan 2020</div>
+          </div>
+          <div class="job-co">Kautilya Corporate Solutions Pvt. Ltd.</div>
+          <ul>
+            <li>Led GST compliance for multiple clients: GSTR-1, GSTR-3B and ITC reconciliation, with 100% on-time filings and no penalties.</li>
+            <li>Set up a monthly compliance calendar that eliminated filing delays.</li>
+            <li>Completed ROC filings (AOC-4, MGT-7, DIR-3 KYC), ledger posting and journal entries.</li>
+          </ul>
         </div>
-        <div class="hc-stat">
-          <div class="num">5+</div>
-          <div class="lbl">Payment gateways</div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Assistant Auditor</div>
+            <div class="job-date">Apr 2018 – Jul 2018</div>
+          </div>
+          <div class="job-co">A.K. Sinha &amp; Co.</div>
+          <ul>
+            <li>Supported audits of schools and banks: ledger scrutiny, voucher verification and trial balance preparation.</li>
+          </ul>
         </div>
-        <div class="hc-stat">
-          <div class="num">M.Com</div>
-          <div class="lbl">IGNOU qualified</div>
+
+        <div class="job">
+          <div class="job-head">
+            <div class="job-title">Insurance Advisor</div>
+            <div class="job-date">Jul 2017 – Feb 2018</div>
+          </div>
+          <div class="job-co">Bajaj Capital Ltd.</div>
+          <ul>
+            <li>Advised clients on insurance and investment products; handled documentation and renewals.</li>
+          </ul>
         </div>
-      </div>
-      <div class="hero-card-badges">
-        <span class="hc-badge">GST</span>
-        <span class="hc-badge">TDS</span>
-        <span class="hc-badge">R2R</span>
-        <span class="hc-badge">AP/AR</span>
-        <span class="hc-badge">MIS</span>
-      </div>
-    </div>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Core skills</h2>
+        <ul class="side-list">
+          <li>Record to Report (R2R)</li>
+          <li>Bank &amp; payment gateway reconciliation</li>
+          <li>GST compliance &amp; filing</li>
+          <li>TDS compliance</li>
+          <li>Accounts payable / receivable</li>
+          <li>MIS reporting</li>
+          <li>Audit support</li>
+          <li>ROC compliance</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Tools</h2>
+        <ul class="side-list">
+          <li>Tally Prime</li>
+          <li>Advanced Excel (Pivot Tables, VLOOKUP / XLOOKUP, SUMIFS)</li>
+          <li>GST Portal, ClearTax</li>
+          <li>Zoho Books</li>
+          <li>MCA / ROC Portal</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item"><strong>M.Com</strong><span>IGNOU</span></div>
+        <div class="edu-item"><strong>BBM</strong><span>Mirza Ghalib College</span></div>
+      </section>
+
+      <section>
+        <h2>Certification</h2>
+        <div class="edu-item"><strong>Tax Pro Professional</strong><span>ITAA Education: advanced accounting, direct taxation and GST</span></div>
+      </section>
+    </aside>
   </div>
-</section>
 
-<!-- ── ABOUT ── -->
-<section id="about">
-  <div class="container">
-    <div class="eyebrow">About me</div>
-    <div class="about-grid">
-      <div>
-        <h2 class="sec-title">Finance professional with a process-first mindset</h2>
-        <div class="about-body">
-          <p>I am a finance and accounts professional based in <strong>Bengaluru, Karnataka</strong>, with over <strong>6 years of hands-on experience</strong> in Record to Report (R2R), accounts payable, bank and payment gateway reconciliation, GST compliance, and MIS reporting.</p>
-          <p>Currently at <strong>Ebix Travels Pvt. Ltd. (Via.com)</strong>, I manage multi-gateway payment reconciliations across TPSL, PayU, CCAvenue, HDFC, and ICICI, process airline backend refunds, and support month-end closing — handling high volumes with a focus on accuracy and zero-error compliance.</p>
-          <p>Previously at <strong>Kautilya Corporate Solutions</strong>, I led GST filings, ledger posting, and ROC compliance (AOC-4, MGT-7, DIR-3 KYC). My foundation in audit began at <strong>A.K. Sinha & Co.</strong>, where I supported school and bank audits.</p>
-          <p>I hold an <strong>M.Com from IGNOU</strong> and a <strong>BBM from Mirza Ghalib College</strong>, along with a <strong>Tax Pro Professional certification</strong> covering advanced accounting, direct taxation, and GST from ITAA Education.</p>
-        </div>
-        <div class="about-highlights">
-          <div class="about-hi">
-            <div class="ico">📍</div>
-            <div class="lab">Location</div>
-            <div class="val">Bengaluru, Karnataka</div>
-          </div>
-          <div class="about-hi">
-            <div class="ico">🎓</div>
-            <div class="lab">Education</div>
-            <div class="val">M.Com — IGNOU</div>
-          </div>
-          <div class="about-hi">
-            <div class="ico">📜</div>
-            <div class="lab">Certification</div>
-            <div class="val">Tax Pro — ITAA</div>
-          </div>
-          <div class="about-hi">
-            <div class="ico">💼</div>
-            <div class="lab">Available for</div>
-            <div class="val">Freelance & Full-time</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-aside">
-        <div class="exp-card">
-          <div class="ec-co">Ebix Travels Pvt. Ltd. (Via.com)</div>
-          <div class="ec-title">Senior Accounts Executive</div>
-          <div class="ec-period">Jan 2020 – Present</div>
-          <div class="ec-desc">Multi-gateway payment reconciliation, AP, month-end close, MIS reporting, audit support.</div>
-        </div>
-        <div class="exp-card">
-          <div class="ec-co">Kautilya Corporate Solutions Pvt. Ltd.</div>
-          <div class="ec-title">Operations Manager</div>
-          <div class="ec-period">Aug 2018 – Jan 2020</div>
-          <div class="ec-desc">GST filings, ROC compliance (AOC-4, MGT-7, DIR-3 KYC), ledger posting, journal entries.</div>
-        </div>
-        <div class="exp-card">
-          <div class="ec-co">A.K. Sinha & Co.</div>
-          <div class="ec-title">Assistant Auditor</div>
-          <div class="ec-period">Apr 2018 – Jul 2018</div>
-          <div class="ec-desc">Audit for schools and banks, ledger scrutiny, voucher verification, trial balance.</div>
-        </div>
-        <div class="exp-card">
-          <div class="ec-co">Bajaj Capital Ltd.</div>
-          <div class="ec-title">Insurance Advisor</div>
-          <div class="ec-period">Jul 2017 – Feb 2018</div>
-          <div class="ec-desc">Client advisory on insurance and investment products, documentation, renewals.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SERVICES ── -->
-<section id="services">
-  <div class="container">
-    <div class="eyebrow">What I offer</div>
-    <h2 class="sec-title">Freelance Finance Services</h2>
-    <p class="sec-sub">Practical, affordable finance support for startups, MSMEs, and growing businesses in Bengaluru and remotely across India.</p>
-    <div class="services-grid">
-      <div class="svc-card reveal">
-        <div class="svc-icon">🧾</div>
-        <div class="svc-name">GST Return Filing</div>
-        <div class="svc-desc">End-to-end GST compliance — GSTR-1, GSTR-3B, GSTR-2B reconciliation, ITC mismatch resolution, and GST registration for new businesses.</div>
-        <span class="svc-price">From ₹3,000/month</span>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">📚</div>
-        <div class="svc-name">Bookkeeping & Accounts</div>
-        <div class="svc-desc">Monthly bookkeeping, general ledger maintenance, AP/AR management, bank reconciliation, and monthly P&L and balance sheet in Tally or Zoho Books.</div>
-        <span class="svc-price">From ₹5,000/month</span>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">📊</div>
-        <div class="svc-name">MIS Reports & Dashboards</div>
-        <div class="svc-desc">Custom monthly MIS packs, P&L summaries, cash flow trackers, and management dashboards in Excel or Google Sheets for smarter business decisions.</div>
-        <span class="svc-price">From ₹8,000/project</span>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">💸</div>
-        <div class="svc-name">TDS Compliance & ITR Filing</div>
-        <div class="svc-desc">TDS deduction, challan payment, 24Q/26Q returns, and ITR filing (ITR-1 to ITR-4) for salaried individuals, freelancers, and small businesses.</div>
-        <span class="svc-price">From ₹1,000/ITR</span>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">🔄</div>
-        <div class="svc-name">Payment Gateway Reconciliation</div>
-        <div class="svc-desc">Specialist reconciliation for PayU, CCAvenue, Razorpay, HDFC, ICICI and other gateways. Identify settlement mismatches, refund discrepancies, and unreconciled entries.</div>
-        <span class="svc-price">From ₹10,000/project</span>
-      </div>
-      <div class="svc-card reveal">
-        <div class="svc-icon">🏗️</div>
-        <div class="svc-name">Finance Setup Consulting</div>
-        <div class="svc-desc">Help new startups set up their entire finance function — chart of accounts, Tally/Zoho Books setup, invoice templates, SOPs, and compliance calendar.</div>
-        <span class="svc-price">From ₹15,000/setup</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SKILLS ── -->
-<section id="skills">
-  <div class="container">
-    <div class="eyebrow">Core expertise</div>
-    <h2 class="sec-title">Skills & Tools</h2>
-    <p class="sec-sub" style="margin-bottom:40px;">Built through 6+ years of daily practice across reconciliation, compliance, and financial reporting.</p>
-    <div class="skills-grid">
-      <div class="skill-row reveal">
-        <span class="skill-name">Bank & Gateway Reconciliation</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:96%"></div></div>
-        <span class="skill-pct">96%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">GST Compliance & Filing</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:92%"></div></div>
-        <span class="skill-pct">92%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">Record to Report (R2R)</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:94%"></div></div>
-        <span class="skill-pct">94%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">Accounts Payable / Receivable</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
-        <span class="skill-pct">90%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">Advanced MS Excel</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
-        <span class="skill-pct">88%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">MIS Reporting</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-        <span class="skill-pct">85%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">TDS Compliance</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
-        <span class="skill-pct">82%</span>
-      </div>
-      <div class="skill-row reveal">
-        <span class="skill-name">Audit Support</span>
-        <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-        <span class="skill-pct">80%</span>
-      </div>
-    </div>
-    <div class="tools-row">
-      <span class="tool-tag">Tally Prime</span>
-      <span class="tool-tag">MS Excel (Advanced)</span>
-      <span class="tool-tag">Pivot Tables</span>
-      <span class="tool-tag">VLOOKUP / XLOOKUP</span>
-      <span class="tool-tag">SUMIFS</span>
-      <span class="tool-tag">GST Portal</span>
-      <span class="tool-tag">ClearTax</span>
-      <span class="tool-tag">Zoho Books</span>
-      <span class="tool-tag">PayU · CCAvenue · HDFC</span>
-      <span class="tool-tag">ICICI · TPSL</span>
-      <span class="tool-tag">MCA / ROC Portal</span>
-    </div>
-  </div>
-</section>
-
-<!-- ── PORTFOLIO ── -->
-<section id="portfolio">
-  <div class="container">
-    <div class="eyebrow">Work samples</div>
-    <h2 class="sec-title">Portfolio Highlights</h2>
-    <p class="sec-sub">Real outcomes from 6+ years in finance operations — anonymised to protect client confidentiality.</p>
-    <div class="port-grid">
-      <div class="port-card reveal">
-        <div class="port-card-top c1">💳</div>
-        <div class="port-card-body">
-          <div class="port-tag">Payment Gateway · Reconciliation</div>
-          <div class="port-title">Multi-gateway reconciliation system — Travel company</div>
-          <div class="port-desc">Designed and managed daily reconciliation for 5 payment gateways (TPSL, PayU, CCAvenue, HDFC, ICICI) processing crores in monthly transactions. Built Excel-based tracking to auto-flag mismatches.</div>
-          <span class="port-result">✓ Zero unresolved mismatches in 12+ months</span>
-        </div>
-      </div>
-      <div class="port-card reveal">
-        <div class="port-card-top c2">📋</div>
-        <div class="port-card-body">
-          <div class="port-tag">GST · Compliance</div>
-          <div class="port-title">GST compliance management — Corporate advisory firm</div>
-          <div class="port-desc">Managed end-to-end GST compliance including GSTR-1, GSTR-3B, and ITC reconciliation for multiple clients. Set up monthly compliance calendar reducing filing delays to zero.</div>
-          <span class="port-result">✓ 100% on-time filings, zero penalties</span>
-        </div>
-      </div>
-      <div class="port-card reveal">
-        <div class="port-card-top c3">📊</div>
-        <div class="port-card-body">
-          <div class="port-tag">MIS · Excel Reporting</div>
-          <div class="port-title">Monthly MIS reporting dashboard — Finance ops</div>
-          <div class="port-desc">Built Excel-based daily bank debit summaries and monthly MIS reports used by leadership for decision-making. Automated reconciliation tracking, reducing manual effort by 60%.</div>
-          <span class="port-result">✓ 60% reduction in manual reporting time</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FREELANCE ── -->
-<section id="freelance">
-  <div class="container">
-    <div class="eyebrow">Open for work</div>
-    <h2 class="sec-title">Available for freelance projects</h2>
-    <p class="sec-sub">Currently employed and also available for part-time freelance finance projects — GST filing, bookkeeping, MIS, and reconciliation work for startups and MSMEs.</p>
-    <div class="fl-grid">
-      <div class="fl-card reveal">
-        <div class="fl-no">01 · NICHE EXPERTISE</div>
-        <div class="fl-title">Payment gateway reconciliation</div>
-        <div class="fl-earn">₹15,000–50,000 per project</div>
-        <div class="fl-desc">Specialist skill very few freelancers offer. If your fintech, e-commerce, or travel business has unsettled gateway mismatches, I can resolve them.</div>
-      </div>
-      <div class="fl-card reveal">
-        <div class="fl-no">02 · MONTHLY RETAINER</div>
-        <div class="fl-title">GST filing & bookkeeping</div>
-        <div class="fl-earn">₹5,000–15,000/month per client</div>
-        <div class="fl-desc">Fully managed GST compliance and monthly bookkeeping for MSMEs and startups. Fixed monthly fee, no surprises. Tally or Zoho Books.</div>
-      </div>
-      <div class="fl-card reveal">
-        <div class="fl-no">03 · REPORTING</div>
-        <div class="fl-title">MIS dashboards & Excel automation</div>
-        <div class="fl-earn">₹8,000–25,000 per project</div>
-        <div class="fl-desc">Custom monthly management reports, cash flow trackers, and Excel dashboards that save your team hours every month.</div>
-      </div>
-      <div class="fl-card reveal">
-        <div class="fl-no">04 · SEASONAL</div>
-        <div class="fl-title">ITR filing & TDS returns</div>
-        <div class="fl-earn">₹1,000–5,000 per filing</div>
-        <div class="fl-desc">Individual and business ITR filing, TDS working, advance tax planning. Especially active during the July–September tax season.</div>
-      </div>
-    </div>
-    <div style="background:var(--gold-lt);border:1px solid #F0C870;border-radius:12px;padding:24px 28px;display:flex;gap:20px;align-items:center;">
-      <div style="font-size:32px">💬</div>
-      <div>
-        <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;">Free 15-minute consultation</div>
-        <div style="font-size:13px;color:var(--muted);">Not sure if I'm the right fit? Book a free 15-minute call and I'll tell you honestly whether I can help — no obligation, no sales pitch.</div>
-      </div>
-      <a href="#contact" style="margin-left:auto;flex-shrink:0;background:var(--gold);color:white;font-size:13px;font-weight:500;padding:10px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;">Book a call</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact">
-  <div class="container">
-    <div class="eyebrow">Get in touch</div>
-    <h2 class="sec-title">Let's work together</h2>
-    <p class="sec-sub">Whether you need ongoing finance support, a one-time project, or just want to explore — reach out and I'll get back within 24 hours.</p>
-    <div class="contact-grid">
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="ci-ico">📱</div>
-          <div>
-            <div class="ci-label">Phone / WhatsApp</div>
-            <div class="ci-value"><a href="tel:+918539979271">+91 85399 79271</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-ico">✉️</div>
-          <div>
-            <div class="ci-label">Email</div>
-            <div class="ci-value"><a href="mailto:email.vikashpathak@gmail.com">email.vikashpathak@gmail.com</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-ico">📍</div>
-          <div>
-            <div class="ci-label">Location</div>
-            <div class="ci-value" style="color:rgba(255,255,255,0.85)">Bengaluru, Karnataka, India</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="ci-ico">🌐</div>
-          <div>
-            <div class="ci-label">Available for</div>
-            <div class="ci-value" style="color:rgba(255,255,255,0.85)">Bengaluru · Remote · Hybrid</div>
-          </div>
-        </div>
-        <div style="margin-top:8px;">
-          <div class="ci-label" style="color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.5px;margin-bottom:12px;">CONNECT</div>
-          <div style="display:flex;gap:10px;">
-            <a href="https://linkedin.com" target="_blank" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;transition:background .2s;">LinkedIn</a>
-            <a href="https://naukri.com" target="_blank" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;transition:background .2s;">Naukri</a>
-            <a href="https://fiverr.com" target="_blank" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 16px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;transition:background .2s;">Fiverr</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <div class="cf-row">
-          <label class="cf-label">Your name</label>
-          <input type="text" class="cf-input" placeholder="e.g. Ramesh Gupta">
-        </div>
-        <div class="cf-row">
-          <label class="cf-label">Email / WhatsApp</label>
-          <input type="text" class="cf-input" placeholder="your@email.com or +91 9XXXXXXXXX">
-        </div>
-        <div class="cf-row">
-          <label class="cf-label">Service needed</label>
-          <input type="text" class="cf-input" placeholder="e.g. GST filing, bookkeeping, MIS reports">
-        </div>
-        <div class="cf-row">
-          <label class="cf-label">Message</label>
-          <textarea class="cf-textarea" placeholder="Tell me briefly about your business and what you need help with..."></textarea>
-        </div>
-        <button class="cf-btn" onclick="handleSubmit(this)">Send message →</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="fl">© 2026 Vikash Pathak · Bengaluru, India</div>
-  <div class="footer-links">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="fr">Built to grow</div>
-</footer>
-
-<script>
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Form submit
-  function handleSubmit(btn) {
-    btn.textContent = '✓ Message sent — I\'ll reply within 24 hours!';
-    btn.style.background = '#0C6E6A';
-    btn.disabled = true;
-  }
-
-  // Active nav link on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--ink)' : '';
-    });
-  });
-</script>
+  <footer>References available on request.</footer>
+</div>
 </body>
 </html>
