@@ -2,230 +2,243 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vikash Pathak — Senior Accounts Executive</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vikash Pathak – Senior Accounts Executive, Bengaluru</title>
+<meta name="description" content="Finance and accounts professional with 6+ years in Record to Report, bank and payment gateway reconciliation, GST and TDS. Based in Bengaluru.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --ink: #1c2430;
-    --muted: #5d6673;
-    --rule: #dfe3e8;
-    --accent: #0f4c5c;
-    --tint: #eef3f4;
-    --paper: #ffffff;
-    --bg: #f2f3f5;
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --ink:#15232b; --muted:#56656d;
+  --accent:#1b5d58; --accent-ink:#ffffff; --rule:#d3dad5; --tint:#e6eee9;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10191d; --surface:#17252b; --ink:#e8eeea; --muted:#9fb0b6;
+    --accent:#6fc2b6; --accent-ink:#0c1a1d; --rule:#2c3d44; --tint:#1c2e33;
+    color-scheme:dark;
   }
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--ink);
-    background: var(--bg);
-    -webkit-font-smoothing: antialiased;
-  }
-  .page {
-    max-width: 920px;
-    margin: 32px auto;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-  }
+}
+:root[data-theme="dark"]{
+  --bg:#10191d; --surface:#17252b; --ink:#e8eeea; --muted:#9fb0b6;
+  --accent:#6fc2b6; --accent-ink:#0c1a1d; --rule:#2c3d44; --tint:#1c2e33;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:20px;flex-wrap:wrap;padding:18px 0;font-size:14.5px;border-bottom:1px solid var(--rule)}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink);text-decoration:underline}
+nav .name{margin-right:auto;color:var(--ink);font-weight:600}
 
-  header {
-    padding: 44px 48px 28px;
-    border-bottom: 3px solid var(--accent);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-  h1 {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 42px;
-    line-height: 1.05;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-  }
-  .headline { color: var(--accent); font-weight: 500; font-size: 15px; margin-top: 8px; }
-  .contact { font-size: 13px; color: var(--muted); line-height: 1.9; text-align: right; }
-  .contact a { color: var(--ink); text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;padding:56px 0 52px;align-items:center}
+h1{font:700 clamp(38px,7vw,60px)/1.04 var(--serif);letter-spacing:-.02em;margin:0 0 16px}
+.role{font:500 clamp(18px,3vw,22px)/1.4 var(--serif);color:var(--accent);margin:0 0 18px}
+.lede{color:var(--muted);max-width:52ch;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:1.5px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
 
-  .body { display: grid; grid-template-columns: 1fr 268px; }
-  main { padding: 32px 40px 40px 48px; }
-  aside { padding: 32px 40px 40px 32px; background: var(--tint); }
+.close{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:22px}
+.close h2{font:700 20px/1.2 var(--serif);margin:0 0 4px}
+.close p{margin:0 0 16px;color:var(--muted);font-size:14px}
+.close ol{list-style:none;margin:0;padding:0;counter-reset:s}
+.close li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;padding:11px 0;border-top:1px dashed var(--rule);font-size:15px}
+.close li::before{content:counter(s);width:26px;height:26px;border-radius:50%;background:var(--tint);color:var(--accent);font-weight:600;font-size:13px;display:grid;place-items:center}
+.close li span{color:var(--muted);display:block;font-size:13.5px}
+.tick{margin-top:12px;padding:10px 12px;background:var(--tint);border-radius:6px;font-size:14px;font-weight:500}
 
-  h2 {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 19px;
-    font-weight: 600;
-    color: var(--accent);
-    padding-bottom: 6px;
-    margin-bottom: 14px;
-    border-bottom: 1px solid var(--rule);
-  }
-  section + section { margin-top: 30px; }
-  aside h2 { border-bottom-color: #cbd6d9; }
+section{padding:48px 0;border-top:1px solid var(--rule)}
+h2.sec{font:700 clamp(26px,4vw,34px)/1.15 var(--serif);letter-spacing:-.01em;margin:0 0 24px}
+.about{max-width:68ch;font-size:17px}
 
-  .summary { color: #2f3947; }
+.job{display:grid;grid-template-columns:150px 1fr;gap:8px 28px;padding:22px 0;border-top:1px solid var(--rule)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{color:var(--muted);font-size:14px;padding-top:3px}
+.job h3{font:700 21px/1.25 var(--serif);margin:0}
+.co{color:var(--accent);font-weight:500;margin:2px 0 10px}
+.job ul{margin:0;padding-left:18px}
+.job li{margin-bottom:6px}
+.job li::marker{color:var(--accent)}
 
-  .job { margin-bottom: 24px; }
-  .job:last-child { margin-bottom: 0; }
-  .job-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
-  .job-title { font-weight: 600; font-size: 15px; }
-  .job-date { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
-  .job-co { color: var(--accent); font-size: 13.5px; margin-bottom: 6px; }
-  .job ul { padding-left: 18px; }
-  .job li { margin-bottom: 4px; }
-  .job li::marker { color: var(--accent); }
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+.skills h3{font:700 18px/1.2 var(--serif);margin:0 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:5px 13px;font-size:14px}
 
-  .side-block { margin-bottom: 4px; }
-  .side-list { list-style: none; }
-  .side-list li { padding: 3px 0; font-size: 13px; }
-  .edu-item { margin-bottom: 12px; font-size: 13px; }
-  .edu-item strong { display: block; font-weight: 600; }
-  .edu-item span { color: var(--muted); }
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.edu div{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px}
+.edu strong{display:block;font:700 18px/1.3 var(--serif)}
+.edu span{display:block;color:var(--muted);font-size:14.5px;margin-top:4px}
 
-  footer { padding: 14px 48px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); }
+.contact-list{list-style:none;margin:0 0 22px;padding:0;font-size:17px}
+.contact-list li{padding:6px 0}
+footer{padding:26px 0 34px;border-top:1px solid var(--rule);color:var(--muted);font-size:13.5px}
 
-  @media (max-width: 760px) {
-    .page { margin: 0; border: 0; }
-    header { padding: 32px 24px 22px; }
-    .contact { text-align: left; }
-    .body { grid-template-columns: 1fr; }
-    main { padding: 26px 24px; }
-    aside { padding: 26px 24px; }
-    footer { padding: 14px 24px; }
-    h1 { font-size: 34px; }
-  }
-  @media print {
-    body { background: #fff; font-size: 12.5px; }
-    .page { margin: 0; border: 0; max-width: none; }
-    aside { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .job { break-inside: avoid; }
-  }
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:32px;padding:40px 0}
+  .job{grid-template-columns:1fr;gap:2px}
+  .when{padding:0 0 4px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{body{background:#fff}nav,.cta{display:none}section{break-inside:avoid}}
 </style>
 </head>
 <body>
-<div class="page">
+<div class="wrap">
+  <nav aria-label="Main">
+    <span class="name">Vikash Pathak</span>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <header>
+  <header class="hero">
     <div>
       <h1>Vikash Pathak</h1>
-      <div class="headline">Senior Accounts Executive · Record to Report · GST &amp; Reconciliation</div>
+      <p class="role">Senior Accounts Executive: Record to Report, reconciliation, GST and TDS</p>
+      <p class="lede">I keep bank, payment gateway and ledger numbers matching, day after day. Six-plus years in finance operations, now at Via.com in Bengaluru.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:email.vikashpathak@gmail.com">Email me</a>
+        <a class="btn ghost" href="tel:+918539979271">Call +91 85399 79271</a>
+      </div>
     </div>
-    <div class="contact">
-      Bengaluru, Karnataka, India<br>
-      <a href="tel:+918539979271">+91 85399 79271</a><br>
-      <a href="mailto:email.vikashpathak@gmail.com">email.vikashpathak@gmail.com</a><br>
-      <a href="https://www.linkedin.com/in/vikashpathak2306/" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="https://www.facebook.com/pathakvikash92" target="_blank" rel="noopener">Facebook</a>
-    </div>
+    <aside class="close" aria-label="How a day closes">
+      <h2>How a day closes</h2>
+      <p>My daily reconciliation routine at Via.com.</p>
+      <ol>
+        <li><div>Bank statements in<span>Download and check agent and distributor deposits</span></div></li>
+        <li><div>Deposits matched<span>Bank-to-system reconciliation</span></div></li>
+        <li><div>Wallet balances updated<span>Only after the deposit is verified</span></div></li>
+        <li><div>Gateways reconciled<span>TPSL, PayU, CCAvenue, HDFC, ICICI</span></div></li>
+      </ol>
+      <div class="tick">Ledger accuracy confirmed, daily bank debit summary prepared.</div>
+    </aside>
   </header>
 
-  <div class="body">
-    <main>
-      <section>
-        <h2>Professional summary</h2>
-        <p class="summary">Finance and accounts professional with 6+ years of experience in Record to Report (R2R), accounts payable, bank and payment gateway reconciliation, GST compliance, TDS and MIS reporting. Currently handles multi-gateway reconciliations across TPSL, PayU, CCAvenue, HDFC and ICICI, supports month-end close, and builds Excel-based tracking that cuts manual effort. Known for accuracy at high transaction volumes and on-time compliance.</p>
-      </section>
+  <section id="about">
+    <h2 class="sec">About</h2>
+    <p class="about">I’m a finance and accounts professional with 6+ years of experience across Record to Report (R2R), accounts payable, reconciliation, payment processing and financial operations. At Ebix Travels (Via.com) I handle bank and payment gateway reconciliations, airline refund processing, vendor coordination and month-end support. I work with GST, TDS, MIS reporting and advanced Excel, and I care most about accuracy and compliance when transaction volumes are high.</p>
+  </section>
 
-      <section>
-        <h2>Work experience</h2>
+  <section id="experience">
+    <h2 class="sec">Experience</h2>
 
-        <div class="job">
-          <div class="job-head">
-            <div class="job-title">Senior Accounts Executive</div>
-            <div class="job-date">Jan 2020 – Present</div>
-          </div>
-          <div class="job-co">Ebix Travels Pvt. Ltd. (Via.com), Bengaluru</div>
-          <ul>
-            <li>Manage daily reconciliation across five payment gateways and banks (TPSL, PayU, CCAvenue, HDFC, ICICI), with no unresolved mismatches for 12+ months.</li>
-            <li>Process airline backend refunds and support month-end closing under the R2R cycle.</li>
-            <li>Handle accounts payable, audit support and TDS working.</li>
-            <li>Built Excel-based daily bank debit summaries and monthly MIS reports used by leadership, reducing manual reporting time by 60%.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head">
-            <div class="job-title">Operations Manager</div>
-            <div class="job-date">Aug 2018 – Jan 2020</div>
-          </div>
-          <div class="job-co">Kautilya Corporate Solutions Pvt. Ltd.</div>
-          <ul>
-            <li>Led GST compliance for multiple clients: GSTR-1, GSTR-3B and ITC reconciliation, with 100% on-time filings and no penalties.</li>
-            <li>Set up a monthly compliance calendar that eliminated filing delays.</li>
-            <li>Completed ROC filings (AOC-4, MGT-7, DIR-3 KYC), ledger posting and journal entries.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head">
-            <div class="job-title">Assistant Auditor</div>
-            <div class="job-date">Apr 2018 – Jul 2018</div>
-          </div>
-          <div class="job-co">A.K. Sinha &amp; Co.</div>
-          <ul>
-            <li>Supported audits of schools and banks: ledger scrutiny, voucher verification and trial balance preparation.</li>
-          </ul>
-        </div>
-
-        <div class="job">
-          <div class="job-head">
-            <div class="job-title">Insurance Advisor</div>
-            <div class="job-date">Jul 2017 – Feb 2018</div>
-          </div>
-          <div class="job-co">Bajaj Capital Ltd.</div>
-          <ul>
-            <li>Advised clients on insurance and investment products; handled documentation and renewals.</li>
-          </ul>
-        </div>
-      </section>
-    </main>
-
-    <aside>
-      <section>
-        <h2>Core skills</h2>
-        <ul class="side-list">
-          <li>Record to Report (R2R)</li>
-          <li>Bank &amp; payment gateway reconciliation</li>
-          <li>GST compliance &amp; filing</li>
-          <li>TDS compliance</li>
-          <li>Accounts payable / receivable</li>
-          <li>MIS reporting</li>
-          <li>Audit support</li>
-          <li>ROC compliance</li>
+    <div class="job">
+      <div class="when">Jan 2020 – Present</div>
+      <div>
+        <h3>Senior Accounts Executive</h3>
+        <div class="co">Ebix Travels Pvt. Ltd. (Via.com), Bengaluru</div>
+        <ul>
+          <li>Reconcile agent and distributor deposits from bank statements to the system and update wallet balances.</li>
+          <li>Run payment gateway reconciliations and resolve settlement mismatches.</li>
+          <li>Process airline backend refunds and validate them against settlements.</li>
+          <li>Handle payment processing and support month-end activities.</li>
+          <li>Prepare daily bank debit summaries and keep ledgers accurate.</li>
         </ul>
-      </section>
+      </div>
+    </div>
 
-      <section>
-        <h2>Tools</h2>
-        <ul class="side-list">
-          <li>Tally Prime</li>
-          <li>Advanced Excel (Pivot Tables, VLOOKUP / XLOOKUP, SUMIFS)</li>
-          <li>GST Portal, ClearTax</li>
-          <li>Zoho Books</li>
-          <li>MCA / ROC Portal</li>
+    <div class="job">
+      <div class="when">Aug 2018 – Jan 2020</div>
+      <div>
+        <h3>Operations Manager</h3>
+        <div class="co">Kautilya Corporate Solutions Pvt. Ltd.</div>
+        <ul>
+          <li>Managed GST filings, statutory documentation and compliance for clients.</li>
+          <li>Performed GST reconciliation, ledger posting and journal entries.</li>
+          <li>Supported ROC filings: AOC-4, MGT-7 and DIR-3 KYC.</li>
+          <li>Coordinated monthly compliance reporting and client documentation.</li>
         </ul>
-      </section>
+      </div>
+    </div>
 
-      <section>
-        <h2>Education</h2>
-        <div class="edu-item"><strong>M.Com</strong><span>IGNOU</span></div>
-        <div class="edu-item"><strong>BBM</strong><span>Mirza Ghalib College</span></div>
-      </section>
+    <div class="job">
+      <div class="when">Apr 2018 – Jul 2018</div>
+      <div>
+        <h3>Assistant Auditor</h3>
+        <div class="co">A.K. Sinha &amp; Co.</div>
+        <ul>
+          <li>Assisted audits of schools, banks and institutions.</li>
+          <li>Did ledger scrutiny, voucher verification and reconciliations.</li>
+          <li>Supported preparation of trial balances and financial statements.</li>
+        </ul>
+      </div>
+    </div>
 
-      <section>
-        <h2>Certification</h2>
-        <div class="edu-item"><strong>Tax Pro Professional</strong><span>ITAA Education: advanced accounting, direct taxation and GST</span></div>
-      </section>
-    </aside>
-  </div>
+    <div class="job">
+      <div class="when">Jul 2017 – Feb 2018</div>
+      <div>
+        <h3>Insurance Advisor</h3>
+        <div class="co">Bajaj Capital Ltd.</div>
+        <ul>
+          <li>Advised clients on insurance and investment products.</li>
+          <li>Managed documentation, policy processing and renewals.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <footer>References available on request.</footer>
+  <section id="skills">
+    <h2 class="sec">Skills</h2>
+    <div class="skills">
+      <div>
+        <h3>Accounting and finance</h3>
+        <ul class="chips">
+          <li>Record to Report</li><li>Bank reconciliation</li><li>Payment gateway reconciliation</li><li>Accounts payable</li><li>Journal entries</li><li>Refund processing</li><li>Payment processing</li><li>MIS reporting</li><li>Audit support</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tax and compliance</h3>
+        <ul class="chips">
+          <li>GST compliance</li><li>GST reconciliation</li><li>TDS</li><li>ROC / MCA filings</li><li>Statutory documentation</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tools</h3>
+        <ul class="chips">
+          <li>Tally Prime</li><li>Advanced Excel</li><li>Pivot Tables</li><li>VLOOKUP / XLOOKUP</li><li>SUMIFS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2 class="sec">Education and certification</h2>
+    <div class="edu">
+      <div><strong>Master of Commerce (M.Com)</strong><span>Indira Gandhi National Open University (IGNOU), 2017–2019</span></div>
+      <div><strong>Bachelor of Business Management (BBM)</strong><span>Mirza Ghalib College, Gaya, 2011–2014</span></div>
+      <div><strong>Tax Pro Professional</strong><span>ITAA Education Pvt. Ltd. Advanced accounting, direct taxation and GST</span></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec">Contact</h2>
+    <ul class="contact-list">
+      <li>Bengaluru, Karnataka, India</li>
+      <li><a href="mailto:email.vikashpathak@gmail.com">email.vikashpathak@gmail.com</a></li>
+      <li><a href="tel:+918539979271">+91 85399 79271</a></li>
+      <li><a href="https://www.linkedin.com/in/vikashpathak2306/" target="_blank" rel="noopener">LinkedIn profile</a></li>
+    </ul>
+    <a class="btn primary" href="mailto:email.vikashpathak@gmail.com?subject=Opportunity%20for%20Vikash">Send an email</a>
+  </section>
+
+  <footer>© Vikash Pathak. References available on request.</footer>
 </div>
 </body>
 </html>
